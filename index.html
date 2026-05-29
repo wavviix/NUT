@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>รับรื้อถอนอาคาร เคลียร์พื้นที่ รับซื้อบ้านไม้เก่า</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Tahoma", sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.7;
+    }
+
+    header{
+      background:linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover;
+      height:100vh;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:56px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .hero p{
+      font-size:22px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#ff9800;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      font-size:18px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#e68900;
+    }
+
+    section{
+      padding:80px 10%;
+      background:white;
+      margin-bottom:10px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      color:#111;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+      font-size:18px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#fafafa;
+      border-radius:15px;
+      padding:30px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#ff9800;
+      font-size:26px;
+    }
+
+    .card ul{
+      padding-left:20px;
+    }
+
+    .card li{
+      margin-bottom:10px;
+    }
+
+    .why{
+      background:#111;
+      color:white;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .why-box{
+      background:#1f1f1f;
+      padding:25px;
+      border-radius:12px;
+      text-align:center;
+    }
+
+    .why-box h3{
+      color:#ff9800;
+      margin-bottom:10px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .step{
+      background:#fafafa;
+      padding:25px;
+      border-radius:12px;
+      text-align:center;
+      border-top:5px solid #ff9800;
+    }
+
+    .step h3{
+      margin-bottom:15px;
+      color:#111;
+    }
+
+    .contact{
+      background:#ff9800;
+      color:white;
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .contact p{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    footer{
+      background:#111;
+      color:#ccc;
+      text-align:center;
+      padding:20px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <h1>รับรื้อถอนอาคารครบวงจร</h1>
+      <p>
+        รับรื้อถอนบ้าน อาคาร โรงงาน เคลียร์พื้นที่รกร้าง
+        และรับซื้อบ้านไม้เก่า ให้ราคาสูง ประเมินฟรี
+      </p>
+
+      <a href="#contact" class="btn">
+        ติดต่อประเมินราคาฟรี
+      </a>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="section-title">
+      <h2>บริการของเรา</h2>
+      <p>รับงานรื้อถอนและเคลียร์พื้นที่ครบวงจร</p>
+    </div>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>รื้อถอนอาคาร</h3>
+        <ul>
+          <li>รื้อถอนบ้านพักอาศัย</li>
+          <li>รื้อถอนอาคารพาณิชย์</li>
+          <li>รื้อถอนโรงงานและโกดัง</li>
+          <li>รื้อถอนสิ่งปลูกสร้างทุกประเภท</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>เคลียร์พื้นที่</h3>
+        <ul>
+          <li>เคลียร์พื้นที่รกร้าง</li>
+          <li>ขนย้ายเศษวัสดุ</li>
+          <li>ปรับหน้าดิน</li>
+          <li>เตรียมพื้นที่ก่อสร้าง</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>รื้อถอนงานภายใน</h3>
+        <ul>
+          <li>รื้อฝ้าเพดาน</li>
+          <li>รื้อผนัง</li>
+          <li>รื้อพื้นกระเบื้อง</li>
+          <li>รื้อร้านค้าและสำนักงาน</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>รับซื้อบ้านไม้เก่า</h3>
+        <ul>
+          <li>รับซื้อบ้านไม้เก่า</li>
+          <li>รับซื้อไม้สักเก่า</li>
+          <li>รับซื้อประตูหน้าต่างไม้</li>
+          <li>ให้ราคาสูง ยุติธรรม</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+
+    <div class="section-title">
+      <h2 style="color:white;">ทำไมต้องเลือกเรา</h2>
+      <p style="color:#ccc;">
+        มืออาชีพ รวดเร็ว ปลอดภัย ครบจบในที่เดียว
+      </p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-box">
+        <h3>ประเมินฟรี</h3>
+        <p>ไม่มีค่าใช้จ่ายในการประเมินหน้างาน</p>
+      </div>
+
+      <div class="why-box">
+        <h3>ทีมงานมืออาชีพ</h3>
+        <p>มีประสบการณ์ด้านงานรื้อถอนโดยตรง</p>
+      </div>
+
+      <div class="why-box">
+        <h3>ปลอดภัย</h3>
+        <p>ใช้อุปกรณ์และเครื่องจักรมาตรฐาน</p>
+      </div>
+
+      <div class="why-box">
+        <h3>ราคายุติธรรม</h3>
+        <p>รับซื้อบ้านไม้เก่าให้ราคาสูง</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STEPS -->
+  <section>
+
+    <div class="section-title">
+      <h2>ขั้นตอนการให้บริการ</h2>
+      <p>รวดเร็ว ครบวงจร พร้อมเริ่มงานทันที</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <h3>1. ติดต่อสอบถาม</h3>
+        <p>ส่งรูปหรือรายละเอียดหน้างานให้ทีมงานประเมิน</p>
+      </div>
+
+      <div class="step">
+        <h3>2. เข้าดูหน้างาน</h3>
+        <p>ทีมงานเข้าประเมินและเสนอราคา</p>
+      </div>
+
+      <div class="step">
+        <h3>3. เริ่มดำเนินงาน</h3>
+        <p>รื้อถอน เคลียร์พื้นที่ หรือรับซื้อบ้านไม้</p>
+      </div>
+
+      <div class="step">
+        <h3>4. ส่งมอบงาน</h3>
+        <p>เก็บงานเรียบร้อย พร้อมใช้งานต่อ</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>ติดต่อเรา</h2>
+
+    <p>📞 โทร : 08X-XXX-XXXX</p>
+    <p>📱 Line : @yourline</p>
+    <p>📍 รับงานทั่วประเทศ</p>
+
+    <br>
+
+    <a href="tel:0800000000" class="btn">
+      โทรสอบถามทันที
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 รับรื้อถอนอาคารครบวงจร | เคลียร์พื้นที่ | รับซื้อบ้านไม้เก่า
+  </footer>
+
+</body>
+</html>
