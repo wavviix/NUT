@@ -1,457 +1,281 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>รับรื้อถอนอาคาร เคลียร์พื้นที่ รับซื้อบ้านไม้เก่า</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: "Tahoma", sans-serif;
-    }
-
-    body{
-      background:#f5f5f5;
-      color:#222;
-      line-height:1.7;
-    }
-
-    header{
-      background:linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover;
-      height:100vh;
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
-
-    .hero{
-      max-width:900px;
-    }
-
-    .company-name{
-      display:inline-block;
-      margin-bottom:18px;
-      padding:8px 18px;
-      border:1px solid rgba(255,255,255,.65);
-      border-radius:8px;
-      background:rgba(0,0,0,.28);
-      font-size:20px;
-      font-weight:bold;
-    }
-
-    .hero h1{
-      font-size:56px;
-      margin-bottom:20px;
-      line-height:1.2;
-    }
-
-    .hero p{
-      font-size:22px;
-      margin-bottom:30px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:15px 35px;
-      background:#ff9800;
-      color:white;
-      text-decoration:none;
-      border-radius:8px;
-      font-size:18px;
-      transition:0.3s;
-      font-weight:bold;
-    }
-
-    .btn:hover{
-      background:#e68900;
-    }
-
-    section{
-      padding:80px 10%;
-      background:white;
-      margin-bottom:10px;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:50px;
-    }
-
-    .section-title h2{
-      font-size:42px;
-      color:#111;
-      margin-bottom:10px;
-    }
-
-    .section-title p{
-      color:#666;
-      font-size:18px;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-    }
-
-    .card{
-      background:#fafafa;
-      border-radius:15px;
-      padding:30px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-    }
-
-    .card h3{
-      margin-bottom:15px;
-      color:#ff9800;
-      font-size:26px;
-    }
-
-    .card ul{
-      padding-left:20px;
-    }
-
-    .card li{
-      margin-bottom:10px;
-    }
-
-    .why{
-      background:#111;
-      color:white;
-    }
-
-    .why-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:25px;
-      margin-top:40px;
-    }
-
-    .why-box{
-      background:#1f1f1f;
-      padding:25px;
-      border-radius:12px;
-      text-align:center;
-    }
-
-    .why-box h3{
-      color:#ff9800;
-      margin-bottom:10px;
-    }
-
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-      margin-top:40px;
-    }
-
-    .step{
-      background:#fafafa;
-      padding:25px;
-      border-radius:12px;
-      text-align:center;
-      border-top:5px solid #ff9800;
-    }
-
-    .step h3{
-      margin-bottom:15px;
-      color:#111;
-    }
-
-    .contact{
-      background:#ff9800;
-      color:white;
-      text-align:center;
-    }
-
-    .contact h2{
-      font-size:42px;
-      margin-bottom:20px;
-    }
-
-    .contact p{
-      font-size:20px;
-      margin-bottom:10px;
-    }
-
-    .contact-wrap{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:28px;
-      align-items:center;
-      max-width:980px;
-      margin:0 auto;
-      text-align:left;
-    }
-
-    .company-panel,
-    .qr-panel{
-      background:rgba(255,255,255,.16);
-      border:1px solid rgba(255,255,255,.28);
-      border-radius:12px;
-      padding:28px;
-    }
-
-    .company-panel h3,
-    .qr-panel h3{
-      font-size:28px;
-      margin-bottom:12px;
-    }
-
-    .company-panel .company-display{
-      font-size:34px;
-      font-weight:bold;
-      line-height:1.3;
-      margin-bottom:16px;
-    }
-
-    .qr-panel{
-      text-align:center;
-    }
-
-    .qr-placeholder{
-      width:min(220px,100%);
-      aspect-ratio:1;
-      margin:14px auto 16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:white;
-      color:#111;
-      border-radius:8px;
-      border:10px solid #fff;
-      box-shadow:0 10px 25px rgba(0,0,0,.18);
-      font-size:24px;
-      font-weight:bold;
-      line-height:1.25;
-    }
-
-    .line-id{
-      display:inline-block;
-      padding:8px 14px;
-      background:#06c755;
-      border-radius:8px;
-      font-weight:bold;
-    }
-
-    footer{
-      background:#111;
-      color:#ccc;
-      text-align:center;
-      padding:20px;
-    }
-
-    @media(max-width:768px){
-
-      .hero h1{
-        font-size:38px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
-      .section-title h2{
-        font-size:32px;
-      }
-
-      .contact-wrap{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-
-      .company-panel .company-display{
-        font-size:28px;
-      }
-
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <header>
-    <div class="hero">
-      <div class="company-name">ชื่อบริษัทของคุณ</div>
-      <h1>รับรื้อถอนอาคารครบวงจร</h1>
-      <p>
-        รับรื้อถอนบ้าน อาคาร โรงงาน เคลียร์พื้นที่รกร้าง
-        และรับซื้อบ้านไม้เก่า ให้ราคาสูง ประเมินฟรี
-      </p>
-
-      <a href="#contact" class="btn">
-        ติดต่อประเมินราคาฟรี
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Eco Clear รับรื้อถอนอาคาร เคลียร์ริ่งพื้นที่ ถมดิน และปลูกต้นกล้วยเพื่อลดภาษีที่ดินรกร้าง กรุงเทพฯ และปริมณฑล"
+      data-th="Eco Clear รับรื้อถอนอาคาร เคลียร์ริ่งพื้นที่ ถมดิน และปลูกต้นกล้วยเพื่อลดภาษีที่ดินรกร้าง กรุงเทพฯ และปริมณฑล"
+      data-en="Eco Clear provides demolition, land clearing, land filling, and banana planting services for vacant land in Bangkok and nearby provinces."
+    >
+    <title>Eco Clear | รื้อถอน เคลียร์พื้นที่ ปลูกกล้วย</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Eco Clear หน้าแรก">
+        <img class="brand-logo" src="assets/eco-clear-logo.jpg" alt="Eco Clear Demolition logo">
+        <span>
+          <strong>Eco Clear</strong>
+          <small data-th="รื้อถอน เคลียร์พื้นที่ ปลูกกล้วย" data-en="Demolition, land clearing, banana planting">รื้อถอน เคลียร์พื้นที่ ปลูกกล้วย</small>
+        </span>
       </a>
-    </div>
-  </header>
-
-  <!-- SERVICES -->
-  <section>
-    <div class="section-title">
-      <h2>บริการของเรา</h2>
-      <p>รับงานรื้อถอนและเคลียร์พื้นที่ครบวงจร</p>
-    </div>
-
-    <div class="services">
-
-      <div class="card">
-        <h3>รื้อถอนอาคาร</h3>
-        <ul>
-          <li>รื้อถอนบ้านพักอาศัย</li>
-          <li>รื้อถอนอาคารพาณิชย์</li>
-          <li>รื้อถอนโรงงานและโกดัง</li>
-          <li>รื้อถอนสิ่งปลูกสร้างทุกประเภท</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>เคลียร์พื้นที่</h3>
-        <ul>
-          <li>เคลียร์พื้นที่รกร้าง</li>
-          <li>ขนย้ายเศษวัสดุ</li>
-          <li>ปรับหน้าดิน</li>
-          <li>เตรียมพื้นที่ก่อสร้าง</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>รื้อถอนงานภายใน</h3>
-        <ul>
-          <li>รื้อฝ้าเพดาน</li>
-          <li>รื้อผนัง</li>
-          <li>รื้อพื้นกระเบื้อง</li>
-          <li>รื้อร้านค้าและสำนักงาน</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>รับซื้อบ้านไม้เก่า</h3>
-        <ul>
-          <li>รับซื้อบ้านไม้เก่า</li>
-          <li>รับซื้อไม้สักเก่า</li>
-          <li>รับซื้อประตูหน้าต่างไม้</li>
-          <li>ให้ราคาสูง ยุติธรรม</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="why">
-
-    <div class="section-title">
-      <h2 style="color:white;">ทำไมต้องเลือกเรา</h2>
-      <p style="color:#ccc;">
-        มืออาชีพ รวดเร็ว ปลอดภัย ครบจบในที่เดียว
-      </p>
-    </div>
-
-    <div class="why-grid">
-
-      <div class="why-box">
-        <h3>ประเมินฟรี</h3>
-        <p>ไม่มีค่าใช้จ่ายในการประเมินหน้างาน</p>
-      </div>
-
-      <div class="why-box">
-        <h3>ทีมงานมืออาชีพ</h3>
-        <p>มีประสบการณ์ด้านงานรื้อถอนโดยตรง</p>
-      </div>
-
-      <div class="why-box">
-        <h3>ปลอดภัย</h3>
-        <p>ใช้อุปกรณ์และเครื่องจักรมาตรฐาน</p>
-      </div>
-
-      <div class="why-box">
-        <h3>ราคายุติธรรม</h3>
-        <p>รับซื้อบ้านไม้เก่าให้ราคาสูง</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- STEPS -->
-  <section>
-
-    <div class="section-title">
-      <h2>ขั้นตอนการให้บริการ</h2>
-      <p>รวดเร็ว ครบวงจร พร้อมเริ่มงานทันที</p>
-    </div>
-
-    <div class="steps">
-
-      <div class="step">
-        <h3>1. ติดต่อสอบถาม</h3>
-        <p>ส่งรูปหรือรายละเอียดหน้างานให้ทีมงานประเมิน</p>
-      </div>
-
-      <div class="step">
-        <h3>2. เข้าดูหน้างาน</h3>
-        <p>ทีมงานเข้าประเมินและเสนอราคา</p>
-      </div>
-
-      <div class="step">
-        <h3>3. เริ่มดำเนินงาน</h3>
-        <p>รื้อถอน เคลียร์พื้นที่ หรือรับซื้อบ้านไม้</p>
-      </div>
-
-      <div class="step">
-        <h3>4. ส่งมอบงาน</h3>
-        <p>เก็บงานเรียบร้อย พร้อมใช้งานต่อ</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2>ติดต่อเรา</h2>
-
-    <div class="contact-wrap">
-      <div class="company-panel">
-        <h3>ข้อมูลบริษัท</h3>
-        <div class="company-display">ชื่อบริษัทของคุณ</div>
-        <p>โทร : 08X-XXX-XXXX</p>
-        <p>Line : @yourline</p>
-        <p>รับงานทั่วประเทศ</p>
-
-      </div>
-
-      <div class="qr-panel">
-        <h3>สแกน Line</h3>
-        <div class="qr-placeholder">
-          QR CODE<br>LINE
+      <nav class="main-nav" aria-label="เมนูหลัก">
+        <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
+        <a href="#process" data-th="ขั้นตอน" data-en="Process">ขั้นตอน</a>
+        <a href="#projects" data-th="ผลงาน" data-en="Projects">ผลงาน</a>
+        <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="เลือกภาษา">
+          <button class="lang-btn active" type="button" data-lang="th" aria-pressed="true">TH</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
-        <p class="line-id">@yourline</p>
+        <a class="header-call" href="tel:0944968827">094-496-8827</a>
       </div>
-    </div>
+    </header>
 
-  </section>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" role="img" aria-label="รถแบคโฮกำลังเคลียร์พื้นที่ก่อสร้าง"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-brand-lockup" aria-hidden="true">
+            <img src="assets/eco-clear-logo.jpg" alt="">
+            <span>Eco Clear Demolition</span>
+          </div>
+          <p class="eyebrow" data-th="ทีมรื้อถอนและจัดการพื้นที่ครบวงจร" data-en="Full-service demolition and land preparation team">ทีมรื้อถอนและจัดการพื้นที่ครบวงจร</p>
+          <h1 id="hero-title" data-th="รื้อถอน เคลียร์ริ่งพื้นที่ และปลูกต้นกล้วยให้พร้อมใช้ประโยชน์" data-en="Demolition, land clearing, and banana planting for usable land">รื้อถอน เคลียร์ริ่งพื้นที่ และปลูกต้นกล้วยให้พร้อมใช้ประโยชน์</h1>
+          <p class="hero-copy" data-th="ประเมินหน้างานฟรี วางแผนงานตามสภาพพื้นที่จริง จัดการซากปูน เศษวัสดุ ดินถม และแปลงปลูกกล้วยสำหรับที่ดินรกร้างในกรุงเทพฯ และปริมณฑล" data-en="Free site assessment. We plan around real site conditions, manage concrete debris, waste materials, soil filling, and banana planting for vacant land in Bangkok and nearby provinces.">
+            ประเมินหน้างานฟรี วางแผนงานตามสภาพพื้นที่จริง จัดการซากปูน เศษวัสดุ ดินถม และแปลงปลูกกล้วยสำหรับที่ดินรกร้างในกรุงเทพฯ และปริมณฑล
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://line.me/R/ti/p/@137gbgob" data-th="ส่งรูปหน้างานทาง LINE" data-en="Send site photos on LINE">ส่งรูปหน้างานทาง LINE</a>
+            <a class="btn secondary" href="tel:0944968827" data-th="โทรปรึกษา" data-en="Call for advice">โทรปรึกษา</a>
+          </div>
+          <dl class="hero-stats" aria-label="จุดเด่นบริการ">
+            <div>
+              <dt data-th="ฟรี" data-en="Free">ฟรี</dt>
+              <dd data-th="ประเมินหน้างาน" data-en="Site assessment">ประเมินหน้างาน</dd>
+            </div>
+            <div>
+              <dt data-th="ครบ" data-en="Full">ครบ</dt>
+              <dd data-th="รื้อถอน ถมดิน ปลูก" data-en="Demolish, fill, plant">รื้อถอน ถมดิน ปลูก</dd>
+            </div>
+            <div>
+              <dt data-th="ไว" data-en="Fast">ไว</dt>
+              <dd data-th="ทีมพร้อม เครื่องจักรพร้อม" data-en="Ready team and equipment">ทีมพร้อม เครื่องจักรพร้อม</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 รับรื้อถอนอาคารครบวงจร | เคลียร์พื้นที่ | รับซื้อบ้านไม้เก่า
-  </footer>
+      <section class="section intro">
+        <div class="section-kicker" data-th="งานพื้นที่ต้องจบเป็นระบบ" data-en="Land work needs a clear system">งานพื้นที่ต้องจบเป็นระบบ</div>
+        <div class="intro-grid">
+          <h2 data-th="จากพื้นที่รกหรืออาคารเก่า สู่ที่ดินพร้อมใช้งานในแผนเดียว" data-en="From overgrown land or old buildings to a ready-to-use site in one plan">จากพื้นที่รกหรืออาคารเก่า สู่ที่ดินพร้อมใช้งานในแผนเดียว</h2>
+          <p data-th="เราดูหน้างานก่อนเริ่มทุกครั้ง เพื่อประเมินความเสี่ยง ทางเข้าออก เครื่องจักรที่เหมาะสม จุดทิ้งเศษวัสดุ และรูปแบบปลูกกล้วยที่ดูแลง่าย เจ้าของที่ดินจึงคุมงบ คุมเวลา และเห็นภาพงานจบตั้งแต่ต้น" data-en="We inspect every site before starting to evaluate risk, access routes, suitable machinery, disposal points, and an easy-to-maintain banana planting layout. Landowners can control budget, timing, and the final result from the beginning.">
+            เราดูหน้างานก่อนเริ่มทุกครั้ง เพื่อประเมินความเสี่ยง ทางเข้าออก เครื่องจักรที่เหมาะสม จุดทิ้งเศษวัสดุ และรูปแบบปลูกกล้วยที่ดูแลง่าย เจ้าของที่ดินจึงคุมงบ คุมเวลา และเห็นภาพงานจบตั้งแต่ต้น
+          </p>
+        </div>
+      </section>
 
-</body>
+      <section class="section services" id="services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker" data-th="บริการของเรา" data-en="Our services">บริการของเรา</div>
+            <h2 id="services-title" data-th="เลือกบริการตามสภาพพื้นที่" data-en="Choose the right service for your site">เลือกบริการตามสภาพพื้นที่</h2>
+          </div>
+          <p data-th="รับทั้งงานบ้าน อาคาร โกดัง ที่ดินรกร้าง และพื้นที่ที่ต้องเตรียมปลูกพืชเพื่อลดภาระภาษี" data-en="We handle homes, buildings, warehouses, vacant land, and sites that need preparation for planting to reduce vacant-land burden.">รับทั้งงานบ้าน อาคาร โกดัง ที่ดินรกร้าง และพื้นที่ที่ต้องเตรียมปลูกพืชเพื่อลดภาระภาษี</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card demolition">
+            <span class="service-icon" aria-hidden="true">01</span>
+            <h3 data-th="รื้อถอนอาคารและโครงสร้าง" data-en="Building and structure demolition">รื้อถอนอาคารและโครงสร้าง</h3>
+            <p data-th="บ้าน ทาวน์เฮาส์ อาคารพาณิชย์ โกดัง โครงหลังคา และงานรื้อถอนภายในเพื่อรีโนเวท" data-en="Houses, townhomes, commercial buildings, warehouses, roof structures, and interior demolition for renovation.">บ้าน ทาวน์เฮาส์ อาคารพาณิชย์ โกดัง โครงหลังคา และงานรื้อถอนภายในเพื่อรีโนเวท</p>
+            <ul>
+              <li data-th="วางแผนความปลอดภัยก่อนเริ่มงาน" data-en="Safety planning before work begins">วางแผนความปลอดภัยก่อนเริ่มงาน</li>
+              <li data-th="ขนย้ายเศษปูน เหล็ก ไม้ และวัสดุเหลือใช้" data-en="Remove concrete, steel, wood, and leftover materials">ขนย้ายเศษปูน เหล็ก ไม้ และวัสดุเหลือใช้</li>
+              <li data-th="ประสานงานขั้นตอนหน้างานให้เป็นลำดับ" data-en="Coordinate site workflow step by step">ประสานงานขั้นตอนหน้างานให้เป็นลำดับ</li>
+            </ul>
+          </article>
+          <article class="service-card clearing">
+            <span class="service-icon" aria-hidden="true">02</span>
+            <h3 data-th="เคลียร์ริ่งพื้นที่รกร้าง" data-en="Vacant land clearing">เคลียร์ริ่งพื้นที่รกร้าง</h3>
+            <p data-th="ตัดวัชพืช เก็บเศษวัสดุ ปรับระดับพื้นที่ สกัดปูน ฝังกลบหรือขนทิ้งตามความเหมาะสม" data-en="Cut weeds, remove debris, level the site, break concrete, and bury or haul away materials as appropriate.">ตัดวัชพืช เก็บเศษวัสดุ ปรับระดับพื้นที่ สกัดปูน ฝังกลบหรือขนทิ้งตามความเหมาะสม</p>
+            <ul>
+              <li data-th="ใช้แบคโฮและทีมงานตามขนาดพื้นที่" data-en="Use excavators and crew based on site size">ใช้แบคโฮและทีมงานตามขนาดพื้นที่</li>
+              <li data-th="ปรับทางเข้าออกสำหรับรถและเครื่องจักร" data-en="Prepare access routes for vehicles and machinery">ปรับทางเข้าออกสำหรับรถและเครื่องจักร</li>
+              <li data-th="เตรียมพื้นที่ต่อยอดถมดินหรือปลูกพืช" data-en="Prepare the site for soil filling or planting">เตรียมพื้นที่ต่อยอดถมดินหรือปลูกพืช</li>
+            </ul>
+          </article>
+          <article class="service-card banana">
+            <span class="service-icon" aria-hidden="true">03</span>
+            <h3 data-th="ปลูกต้นกล้วยในที่ดินรกร้าง" data-en="Banana planting for vacant land">ปลูกต้นกล้วยในที่ดินรกร้าง</h3>
+            <p data-th="วางแนวปลูก จัดระยะหลุม ปั้นคันดิน และปลูกกล้วยให้เป็นแถวเรียบร้อย ดูแลง่าย" data-en="Set planting lines, space the holes, shape soil ridges, and plant banana trees in neat, easy-to-maintain rows.">วางแนวปลูก จัดระยะหลุม ปั้นคันดิน และปลูกกล้วยให้เป็นแถวเรียบร้อย ดูแลง่าย</p>
+            <ul>
+              <li data-th="เหมาะกับที่ดินที่ต้องการใช้ประโยชน์ระหว่างรอโครงการ" data-en="Ideal for land that needs active use while waiting for development">เหมาะกับที่ดินที่ต้องการใช้ประโยชน์ระหว่างรอโครงการ</li>
+              <li data-th="ช่วยให้พื้นที่ดูเป็นระเบียบและตรวจสอบง่าย" data-en="Keeps the site orderly and easy to inspect">ช่วยให้พื้นที่ดูเป็นระเบียบและตรวจสอบง่าย</li>
+              <li data-th="ต่อยอดทำรั้วลวดหนามและประตูทางเข้าได้" data-en="Can add barbed-wire fencing and entrance gates">ต่อยอดทำรั้วลวดหนามและประตูทางเข้าได้</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="visual-band" aria-label="ภาพบริการปลูกต้นกล้วยและจัดการพื้นที่">
+        <div class="band-image banana-field" role="img" aria-label="แปลงต้นกล้วยในพื้นที่โล่ง"></div>
+        <div class="band-content">
+          <p class="eyebrow">Banana land clearing</p>
+          <h2 data-th="ปลูกให้เป็นแนว ดูแลง่าย และพร้อมตรวจพื้นที่" data-en="Planted in rows, easy to maintain, and ready for inspection">ปลูกให้เป็นแนว ดูแลง่าย และพร้อมตรวจพื้นที่</h2>
+          <p data-th="เหมาะสำหรับเจ้าของที่ดินที่ต้องการเปลี่ยนพื้นที่รกร้างให้มีการใช้ประโยชน์จริง โดยยังคุมความเรียบร้อยและทางเข้าหน้างานได้" data-en="Suitable for landowners who want to turn vacant land into active-use space while keeping the site tidy and accessible.">
+            เหมาะสำหรับเจ้าของที่ดินที่ต้องการเปลี่ยนพื้นที่รกร้างให้มีการใช้ประโยชน์จริง โดยยังคุมความเรียบร้อยและทางเข้าหน้างานได้
+          </p>
+        </div>
+      </section>
+
+      <section class="section process" id="process" aria-labelledby="process-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker" data-th="ขั้นตอนทำงาน" data-en="Work process">ขั้นตอนทำงาน</div>
+            <h2 id="process-title" data-th="เริ่มง่าย แค่ส่งรูปและแชร์โลเคชัน" data-en="Easy to start: send photos and share the location">เริ่มง่าย แค่ส่งรูปและแชร์โลเคชัน</h2>
+          </div>
+        </div>
+        <ol class="process-list">
+          <li>
+            <strong data-th="ส่งรูปหน้างาน" data-en="Send site photos">ส่งรูปหน้างาน</strong>
+            <span data-th="ถ่ายภาพรอบพื้นที่ อาคาร ทางเข้าออก และจุดที่ต้องการรื้อหรือปลูก" data-en="Take photos of the site, buildings, access routes, and areas to demolish or plant.">ถ่ายภาพรอบพื้นที่ อาคาร ทางเข้าออก และจุดที่ต้องการรื้อหรือปลูก</span>
+          </li>
+          <li>
+            <strong data-th="นัดประเมินฟรี" data-en="Book a free assessment">นัดประเมินฟรี</strong>
+            <span data-th="ทีมงานเข้าดูหน้างาน ประเมินเครื่องจักร จำนวนคน และระยะเวลาที่เหมาะสม" data-en="Our team visits the site to estimate machinery, crew size, and working time.">ทีมงานเข้าดูหน้างาน ประเมินเครื่องจักร จำนวนคน และระยะเวลาที่เหมาะสม</span>
+          </li>
+          <li>
+            <strong data-th="เสนอแผนและราคา" data-en="Get plan and pricing">เสนอแผนและราคา</strong>
+            <span data-th="แจกแจงงานรื้อถอน เคลียร์ ขนทิ้ง ถมดิน หรือปลูกกล้วยตามขอบเขตจริง" data-en="We outline demolition, clearing, hauling, filling, or banana planting based on the real scope.">แจกแจงงานรื้อถอน เคลียร์ ขนทิ้ง ถมดิน หรือปลูกกล้วยตามขอบเขตจริง</span>
+          </li>
+          <li>
+            <strong data-th="ส่งมอบพื้นที่" data-en="Hand over the site">ส่งมอบพื้นที่</strong>
+            <span data-th="เก็บงานให้เรียบร้อย พร้อมภาพก่อนหลังและคำแนะนำการดูแลพื้นที่ต่อ" data-en="We clean up the work, provide before-and-after photos, and share aftercare advice.">เก็บงานให้เรียบร้อย พร้อมภาพก่อนหลังและคำแนะนำการดูแลพื้นที่ต่อ</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker" data-th="ผลงานที่รับบ่อย" data-en="Common project types">ผลงานที่รับบ่อย</div>
+            <h2 id="projects-title" data-th="งานหลากหลาย ตั้งแต่แปลงเล็กถึงพื้นที่หลายไร่" data-en="From small plots to multi-rai land projects">งานหลากหลาย ตั้งแต่แปลงเล็กถึงพื้นที่หลายไร่</h2>
+          </div>
+        </div>
+        <div class="project-grid">
+          <article>
+            <img src="https://images.unsplash.com/photo-1767275102773-e5abc3e43528?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=900" alt="เครื่องจักรก่อสร้างในพื้นที่งาน">
+            <h3 data-th="รื้อถอนบ้านและอาคาร" data-en="House and building demolition">รื้อถอนบ้านและอาคาร</h3>
+            <p data-th="บ้านเดี่ยว ทาวน์เฮาส์ อาคารพาณิชย์ โครงหลังคา และงานภายในอาคาร" data-en="Detached houses, townhomes, commercial buildings, roof structures, and interior demolition.">บ้านเดี่ยว ทาวน์เฮาส์ อาคารพาณิชย์ โครงหลังคา และงานภายในอาคาร</p>
+          </article>
+          <article>
+            <img src="https://images.unsplash.com/photo-1766595680977-fd4818afa337?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=900" alt="พื้นที่ดินโล่งหลังปรับพื้นที่">
+            <h3 data-th="เคลียร์พื้นที่รกร้าง" data-en="Overgrown land clearing">เคลียร์พื้นที่รกร้าง</h3>
+            <p data-th="ตัดหญ้า เก็บเศษวัสดุ ปรับพื้น สกัดคอนกรีต และเตรียมทางเข้าออก" data-en="Grass cutting, debris removal, grading, concrete breaking, and access preparation.">ตัดหญ้า เก็บเศษวัสดุ ปรับพื้น สกัดคอนกรีต และเตรียมทางเข้าออก</p>
+          </article>
+          <article>
+            <img src="https://images.unsplash.com/photo-1765052293482-654d98e11e91?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=900" alt="ต้นกล้วยและใบกล้วยในแปลงปลูก">
+            <h3 data-th="ปลูกกล้วยลดภาระที่ดินรกร้าง" data-en="Banana planting for vacant land">ปลูกกล้วยลดภาระที่ดินรกร้าง</h3>
+            <p data-th="จัดแนวปลูกให้เรียบร้อย เหมาะกับพื้นที่ที่ต้องใช้ประโยชน์ระหว่างรอพัฒนา" data-en="Neat planting rows for land that needs productive use while waiting for development.">จัดแนวปลูกให้เรียบร้อย เหมาะกับพื้นที่ที่ต้องใช้ประโยชน์ระหว่างรอพัฒนา</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trust" aria-labelledby="trust-title">
+        <div>
+          <div class="section-kicker" data-th="ทำไมต้องเลือกเรา" data-en="Why choose us">ทำไมต้องเลือกเรา</div>
+          <h2 id="trust-title" data-th="ทีมเดียวคุมงานตั้งแต่เริ่มจนส่งมอบ" data-en="One team manages the job from start to handover">ทีมเดียวคุมงานตั้งแต่เริ่มจนส่งมอบ</h2>
+        </div>
+        <div class="trust-grid">
+          <div>
+            <strong data-th="ทีมงานวิ่งดูหน้างานทุกวัน" data-en="Daily site assessment team">ทีมงานวิ่งดูหน้างานทุกวัน</strong>
+            <span data-th="นัดหมายไว ประเมินจากสภาพพื้นที่จริง" data-en="Fast scheduling with estimates based on real site conditions">นัดหมายไว ประเมินจากสภาพพื้นที่จริง</span>
+          </div>
+          <div>
+            <strong data-th="เครื่องจักรพร้อม" data-en="Ready machinery">เครื่องจักรพร้อม</strong>
+            <span data-th="เลือกขนาดแบคโฮและทีมให้เหมาะกับงบและเวลา" data-en="Excavator size and crew matched to budget and timeline">เลือกขนาดแบคโฮและทีมให้เหมาะกับงบและเวลา</span>
+          </div>
+          <div>
+            <strong data-th="งานจบสะอาด" data-en="Clean handover">งานจบสะอาด</strong>
+            <span data-th="เก็บเศษวัสดุและปรับพื้นที่ให้พร้อมใช้งานต่อ" data-en="Remove debris and prepare the area for the next use">เก็บเศษวัสดุและปรับพื้นที่ให้พร้อมใช้งานต่อ</span>
+          </div>
+          <div>
+            <strong data-th="สื่อสารง่าย" data-en="Easy communication">สื่อสารง่าย</strong>
+            <span data-th="ส่งรูป แชร์โล และคุยรายละเอียดผ่าน LINE ได้ทันที" data-en="Send photos, share location, and discuss details on LINE">ส่งรูป แชร์โล และคุยรายละเอียดผ่าน LINE ได้ทันที</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker" data-th="ติดต่อประเมินราคา" data-en="Request an estimate">ติดต่อประเมินราคา</div>
+            <h2 id="contact-title" data-th="มีพื้นที่ให้ดู ส่งรูปมาได้เลย" data-en="Have a site to assess? Send us the photos.">มีพื้นที่ให้ดู ส่งรูปมาได้เลย</h2>
+            <p data-th="แจ้งขนาดพื้นที่ รูปหน้างาน และโลเคชัน ทีมงานจะช่วยประเมินแนวทางที่เหมาะกับงบและกำหนดการ" data-en="Share the land size, site photos, and location. Our team will suggest the right approach for your budget and schedule.">
+              แจ้งขนาดพื้นที่ รูปหน้างาน และโลเคชัน ทีมงานจะช่วยประเมินแนวทางที่เหมาะกับงบและกำหนดการ
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn primary" href="tel:0944968827" data-th="โทร 094-496-8827" data-en="Call 094-496-8827">โทร 094-496-8827</a>
+            <a class="btn dark" href="https://line.me/R/ti/p/@137gbgob">LINE @137gbgob</a>
+            <span class="text-link" data-th="ประเมินฟรี กรุงเทพฯ และปริมณฑล" data-en="Free assessment in Bangkok and nearby provinces">ประเมินฟรี กรุงเทพฯ และปริมณฑล</span>
+          </div>
+          <div class="line-card">
+            <img src="assets/line-qr.png" alt="LINE QR code for Eco Clear">
+            <strong>LINE @137gbgob</strong>
+            <span data-th="สแกนเพื่อส่งรูปหน้างานและโลเคชัน" data-en="Scan to send site photos and location">สแกนเพื่อส่งรูปหน้างานและโลเคชัน</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-th="Eco Clear | รับทุบตึกรื้อถอน เคลียร์พื้นที่ และปลูกกล้วย" data-en="Eco Clear | Demolition, land clearing, and banana planting">Eco Clear | รับทุบตึกรื้อถอน เคลียร์พื้นที่ และปลูกกล้วย</p>
+      <p data-th="กรุงเทพฯ และปริมณฑล | รื้อถอน เคลียร์ริ่งพื้นที่ ถมดิน ปลูกต้นกล้วย" data-en="Bangkok and nearby provinces | Demolition, land clearing, filling, and banana planting">กรุงเทพฯ และปริมณฑล | รื้อถอน เคลียร์ริ่งพื้นที่ ถมดิน ปลูกต้นกล้วย</p>
+    </footer>
+
+    <script>
+      const languageButtons = document.querySelectorAll(".lang-btn");
+      const translatableItems = document.querySelectorAll("[data-th][data-en]");
+      const metaDescription = document.querySelector('meta[name="description"]');
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.title = lang === "th"
+          ? "Eco Clear | รื้อถอน เคลียร์พื้นที่ ปลูกกล้วย"
+          : "Eco Clear | Demolition, Land Clearing, Banana Planting";
+
+        translatableItems.forEach((item) => {
+          item.textContent = item.dataset[lang];
+        });
+
+        if (metaDescription) {
+          metaDescription.setAttribute("content", metaDescription.dataset[lang]);
+        }
+
+        languageButtons.forEach((button) => {
+          const isActive = button.dataset.lang === lang;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("eco-clear-language", lang);
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      setLanguage(localStorage.getItem("eco-clear-language") || "th");
+    </script>
+  </body>
 </html>
